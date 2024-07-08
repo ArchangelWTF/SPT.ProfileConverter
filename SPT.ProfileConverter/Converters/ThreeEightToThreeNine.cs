@@ -13,6 +13,11 @@ namespace SPT.ProfileConverter.Converters
             reader.FloatParseHandling = FloatParseHandling.Decimal;
             var jsonObj = JObject.Load(reader);
 
+            if (jsonObj["info"]["ProfileConvertedFrom38"] != null)
+            {
+                return new ConversionStatus { Successful = false, Result = "This profile has already been converted!" };
+            }
+
             // Add profile converted marker to the info object.
             var info = jsonObj["info"];
             if (info != null)
