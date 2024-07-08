@@ -27,37 +27,38 @@ namespace SPT.ProfileConverter.Converters
             OnConversionProgressChanged("Added profile converter marker");
 
             // Implement moneyTransferLimitData on profiles
-            var profiles = jsonObj["profiles"];
-            if (profiles != null)
+            var PMCObject = jsonObj["characters"]["pmc"];
+            if (PMCObject != null)
             {
-                foreach (var profile in profiles.Children<JObject>())
+                PMCObject["moneyTransferLimitData"] = new JObject
                 {
-                    profile["moneyTransferLimitData"] = new JObject
-                    {
-                        ["nextResetTime"] = 1717779074,
-                        ["remainingLimit"] = 1000000,
-                        ["totalLimit"] = 1000000,
-                        ["resetInterval"] = 86400
-                    };
-                }
+                    ["nextResetTime"] = 1717779074,
+                    ["remainingLimit"] = 1000000,
+                    ["totalLimit"] = 1000000,
+                    ["resetInterval"] = 86400
+                };
+            }
+            else
+            {
+                return new ConversionStatus { Successful = false, Result = "PMC character object does not exist!" };
             }
 
             OnConversionProgressChanged("Added moneyTransferLimitData to profile");
 
             // Modify the "Info" PMC object
-            var pmcObject = jsonObj["characters"]["pmc"]["Info"];
-            if (pmcObject != null)
+            var pmcInfoObject = PMCObject["Info"];
+            if (pmcInfoObject != null)
             {
-                pmcObject["ProfileConvertedFromPreviousVersion"] = true;
-                pmcObject["isMigratedSkills"] = false;
+                pmcInfoObject["ProfileConvertedFromPreviousVersion"] = true;
+                pmcInfoObject["isMigratedSkills"] = false;
 
-                if (pmcObject["GameVersion"]?.ToString() == "edge_of_darkness")
+                if (pmcInfoObject["GameVersion"]?.ToString() == "edge_of_darkness")
                 {
-                    pmcObject["SelectedMemberCategory"] = 2;
+                    pmcInfoObject["SelectedMemberCategory"] = 2;
                 }
                 else
                 {
-                    pmcObject["SelectedMemberCategory"] = 0;
+                    pmcInfoObject["SelectedMemberCategory"] = 0;
                 }
             }
             else
