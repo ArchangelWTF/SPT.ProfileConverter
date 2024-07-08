@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPT.ProfileConverter", "SPT.ProfileConverter\SPT.ProfileConverter.csproj", "{3E17593F-4E13-453E-920B-4F30901D0977}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPT.ProfileConverter.Console", "SPT.ProfileConverter.Console\SPT.ProfileConverter.Console.csproj", "{11AA5313-7DCD-455C-9DB7-035BF9D14638}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E17593F-4E13-453E-920B-4F30901D0977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E17593F-4E13-453E-920B-4F30901D0977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E17593F-4E13-453E-920B-4F30901D0977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E17593F-4E13-453E-920B-4F30901D0977}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11AA5313-7DCD-455C-9DB7-035BF9D14638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11AA5313-7DCD-455C-9DB7-035BF9D14638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11AA5313-7DCD-455C-9DB7-035BF9D14638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11AA5313-7DCD-455C-9DB7-035BF9D14638}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {271DAB8E-6DC6-4727-96A1-0EC35C7D65C9}
+	EndGlobalSection
+EndGlobal
