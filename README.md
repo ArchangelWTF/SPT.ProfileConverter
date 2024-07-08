@@ -7,7 +7,9 @@ If you have issues feel free to open an issue on this repository but dont expect
 ---
 ## For converting manually see below: <br>
 Changes across the entire file required (Search and replace): 
+
 sptUsec -> pmcUSEC
+
 sptBear -> pmcBear
 
 ---
@@ -22,11 +24,14 @@ moneyTransferLimitData needs to be implemented on profiles, not really necessary
 
 ---
 The "Info" PMC object has to have the following changes applied below "MemberCategory":
+
 "isMigratedSkills": false,
+
 "SelectedMemberCategory": 0,
 
 For standard accounts as well as left behind accounts the value in SelectedMemberCategory should stay 0, if your account is an EOD account set this to 2
---
+
+---
 Every occurance with "_tpl": "5d235b4d86f7742e017bc88a" needs to have "upd" modified, replace: 
 "Resource": {
      "Value": 0
