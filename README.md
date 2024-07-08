@@ -1,5 +1,5 @@
 # SPT Profile Converter
-## Do not go and ask for support for this in the SPT or FIKA Discord server! You will not get any support for profiles converted with this tool. (And even has properties to make it easier for SPT support staff to check if a profile has been converted.)
+## Do not go and ask for support for this in the SPT or FIKA Discord server! You will not get any support for profiles converted with this tool. (And even has markers to make it easier for SPT support staff to check if a profile has been converted.)
 
 A tool for converting profiles from SPT 3.8 to SPT 3.9, mainly because I got sick of doing this manually with each profile. <br>
 If you have issues feel free to open an issue on this repository but dont expect me to hold your hand.
