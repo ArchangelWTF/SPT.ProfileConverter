@@ -26,7 +26,7 @@ namespace SPT.ProfileConverter.Converters
 
             OnConversionProgressChanged("Added profile converter marker");
 
-            // Implement moneyTransferLimitData on profiles
+            // Implement moneyTransferLimitData on PMC profile
             var PMCObject = jsonObj["characters"]["pmc"];
             if (PMCObject != null)
             {
