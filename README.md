@@ -6,11 +6,15 @@ A tool for converting profiles from SPT 3.8 to SPT 3.9, mainly because I got sic
 If you have issues feel free to open an issue on this repository but dont expect me to hold your hand.
 
 ## Requires:
-[.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+[.NET 8.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 ## Usage:
 
-Open command line in the directory you have extracted the executable, and target the profile as an argument (Or alternatively you can drag and drop the profile on the executable)
+Open command line in the directory you have extracted the executable, and target the profile as an argument.
+
+OR
+
+Drag and drop the profile on the executable.
 
 ## For converting manually see below:
 
