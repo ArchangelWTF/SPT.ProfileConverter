@@ -9,13 +9,23 @@ namespace SPT.ProfileConverter.Converters
         {
             // Read the JSON file, immediately convert to correct PMC types.
             var reader = new JsonTextReader(new StringReader(ConvertPMCTypes(File.ReadAllText(FullFilePath))));
-            //Handle Float parsing as decimal, leaving this as default brought a whole load of unnecessary changes.
+            // Handle Float parsing as decimal, leaving this as default brought a whole load of unnecessary changes.
             reader.FloatParseHandling = FloatParseHandling.Decimal;
             var jsonObj = JObject.Load(reader);
 
             if (jsonObj["info"]["ProfileConvertedFrom38"] != null)
             {
                 return new ConversionStatus { Successful = false, Result = "This profile has already been converted!" };
+            }
+
+            if (jsonObj["spt"]?["version"] != null)
+            {
+                string SPTVersion = jsonObj["spt"]["version"].ToString();
+
+                if(SPTVersion.Contains("3.9"))
+                {
+                    return new ConversionStatus { Successful = false, Result = "This profile was created in 3.9, skipping conversion" };
+                }
             }
 
             // Add profile converted marker to the info object.
