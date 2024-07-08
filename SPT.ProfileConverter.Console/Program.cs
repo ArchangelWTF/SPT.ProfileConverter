@@ -6,6 +6,12 @@ namespace SPT.ProfileConverter.Console
     {
         static void Main(string[] args)
         {
+            System.Console.WriteLine("----------");
+            System.Console.WriteLine("SPT.ProfileConverter for converting profiles from SPT 3.8 to SPT 3.9");
+            System.Console.WriteLine("https://github.com/ArchangelWTF/SPT.ProfileConverter");
+            System.Console.WriteLine("Using this voids all support you will have for your profile in the SPT Discord server.");
+            System.Console.WriteLine("----------");
+
             if (args.Length == 0)
             {
                 System.Console.WriteLine("No profile specified!");
