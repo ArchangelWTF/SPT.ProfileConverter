@@ -81,8 +81,8 @@ namespace SPT.ProfileConverter.Converters
 
         private string ConvertPMCTypes(string JsonFile)
         {
-            JsonFile.Replace("sptUsec", "pmcUSEC");
-            JsonFile.Replace("sptBear", "pmcBear");
+            JsonFile = JsonFile.Replace("sptUsec", "pmcUSEC");
+            JsonFile = JsonFile.Replace("sptBear", "pmcBear");
 
             return JsonFile;
         }
