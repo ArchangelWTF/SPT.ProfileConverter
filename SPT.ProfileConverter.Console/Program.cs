@@ -29,6 +29,8 @@ namespace SPT.ProfileConverter.Console
                 System.Console.WriteLine(Converter.Result);
                 return;
             }
+
+            System.Console.ReadKey();
         }
 
         private static void ConverterBase_ConversionProgress(string Status) => System.Console.WriteLine(Status);
