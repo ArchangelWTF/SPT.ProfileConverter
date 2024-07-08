@@ -33,7 +33,6 @@ namespace SPT.ProfileConverter.Console
             else
             {
                 System.Console.WriteLine(Converter.Result);
-                return;
             }
 
             System.Console.ReadKey();
