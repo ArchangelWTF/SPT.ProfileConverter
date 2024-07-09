@@ -28,7 +28,7 @@ namespace SPT.ProfileConverter.Console
                 System.Console.WriteLine($"Profile {file} has been successfully converted.");
 
                 //Write file back with LF file endings just like the original profile.
-                File.WriteAllText(file, Converter.JsonString.Replace("\r\n", "\n"));
+                JsonHelper.WriteProfile(file, Converter.JsonString);
             }
             else
             {
