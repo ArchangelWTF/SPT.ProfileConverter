@@ -5,13 +5,19 @@ namespace SPT.ProfileConverter.Converters
 {
     public class ThreeEightToThreeNine : ConverterBase
     {
+        protected override string OnLoadConversion(string Profile)
+        {
+            Profile = Profile.Replace("sptUsec", "pmcUSEC");
+            Profile = Profile.Replace("sptBear", "pmcBear");
+
+            OnConversionProgressChanged("Ran OnLoadConversion: sptUsec -> pmcUSEC | sptBear -> pmcBear");
+
+            return Profile;
+        }
+
         public override ConversionStatus ConvertProfile(string FullFilePath)
         {
-            // Read the JSON file, immediately convert to correct PMC types.
-            var reader = new JsonTextReader(new StringReader(ConvertPMCTypes(File.ReadAllText(FullFilePath))));
-            // Handle Float parsing as decimal, leaving this as default brought a whole load of unnecessary changes.
-            reader.FloatParseHandling = FloatParseHandling.Decimal;
-            var jsonObj = JObject.Load(reader);
+            JObject jsonObj = JObject.Load(LoadProfile(FullFilePath));
 
             if (jsonObj["info"]["ProfileConvertedFrom38"] != null)
             {
@@ -93,14 +99,6 @@ namespace SPT.ProfileConverter.Converters
                 Object = jsonObj,
                 JsonString = JsonHelper.JObjectToString(jsonObj)
             };
-        }
-
-        private string ConvertPMCTypes(string JsonFile)
-        {
-            JsonFile = JsonFile.Replace("sptUsec", "pmcUSEC");
-            JsonFile = JsonFile.Replace("sptBear", "pmcBear");
-
-            return JsonFile;
         }
 
         private void ModifyGPCoinTpl(JToken token)
